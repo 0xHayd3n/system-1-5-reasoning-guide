@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "research_scope": "Only the supplied paper's arXiv v3 content; no blog article or later revision used to fill gaps.",
+  "sources": [
+    {
+      "id": "paper-v3",
+      "role": "primary_research",
+      "title": "System-1.5 Reasoning: Traversal in Language and Latent Spaces with Dynamic Shortcuts",
+      "url": "https://arxiv.org/pdf/2505.18962v3",
+      "landing_url": "https://arxiv.org/abs/2505.18962v3",
+      "version": "v3",
+      "version_date": "2025-05-31",
+      "accessed_date": "2026-10-20",
+      "sha256_of_downloaded_official_pdf": "df801de60be918210dec85f34866fe135da60ef1deacab2b08276dbbebe1da6a",
+      "pages": 15,
+      "coverage": {
+        "read": "Full extracted text of all 15 pages, including references",
+        "visual_checks": "Title page, architecture/training diagram and key equations, Table 1, Figures 3 and 4, and conclusion",
+        "appendices": "None present in v3"
+      },
+      "acquisition": {
+        "supplied_filename": "2505.18962v3.pdf",
+        "attachment_inspection": "Parent task inspected supplied attachment title, all four authors, version and date.",
+        "local_reading_route": "Official version-pinned arXiv PDF substituted for local full-paper reading.",
+        "reason": "Library preparation returned a transfer, but the required Library transfer helper could not be loaded in the desktop environment.",
+        "identity_check": "Title, authors, version and date match the supplied attachment inspection.",
+        "byte_equality_to_attachment_verified": false,
+        "source_pdf_committed": false,
+        "full_extraction_committed": false
+      }
+    },
+    {
+      "id": "structure-reference",
+      "role": "documentation_structure_only",
+      "requested_url": "https://github.com/0xHayd3n/harness2-guide",
+      "requested_access_result": "HTTP 404 in public and authenticated checks on 2026-10-20",
+      "used_url": "https://github.com/0xHayd3n/harness-learning-guide",
+      "note": "Inspected nearby available companion for navigation and evidence practices. No assertion that it replaced or renamed the requested repository; no research claims imported."
+    }
+  ],
+  "transcriptions": [
+    {
+      "path": "data/reported-results.csv",
+      "source_id": "paper-v3",
+      "source_location": "Table 1, PDF page 7",
+      "records": 24,
+      "units": "accuracy_pct is percent; steps precede answer generation; FLOPs and speedup are multiplicative factors against CoT",
+      "missing_values": "Blank CoT factor fields preserve source dashes; they do not mean zero.",
+      "backbone": "Unspecified per row in source table",
+      "conflict_policy": "Transcribe the displayed table; preserve conflicting section 3.1 prose in modules and claims."
+    },
+    {
+      "path": "data/test-time-scaling.csv",
+      "source_id": "paper-v3",
+      "source_location": "Figure 4, PDF page 8",
+      "records": 36,
+      "units": "accuracy_pct is percent; lambda_depth is threshold; lambda_step is latent budget",
+      "dataset": null,
+      "dataset_inference": "GSM8K suggested by matching the 46.94% CoT baseline; not explicitly named in caption.",
+      "cost_per_cell": null
+    }
+  ],
+  "exclusions": ["source PDF", "full extracted source", "copied paper figures", "separate test-time-compute blog", "later arXiv versions", "uninspected external implementations"]
+}

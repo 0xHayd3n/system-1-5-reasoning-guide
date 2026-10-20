@@ -1,0 +1,28 @@
+# System-1.5 Reasoning guide
+
+Unofficial reading companion; source arXiv:2505.18962v3, 31 May 2025.
+Authors: Xiaoqiang Wang; Suyuchen Wang; Yun Zhu; Bang Liu.
+Primary source: https://arxiv.org/pdf/2505.18962v3
+Research contribution belongs to the authors. Original guide by 0xHayd3n with Codex assistance.
+
+Start: README.md and AGENTS.md
+Navigate: agents/README.md
+Paper coverage: docs/00-reading-map.md
+Mechanism: docs/02-dynamic-shortcuts.md
+Training: docs/03-training-and-objectives.md
+Evidence: docs/04-experiments-and-results.md
+Caveats: docs/05-limitations-and-open-questions.md
+Proposals: docs/06-discussion-and-reproduction.md
+Notation: docs/glossary.md
+Claims: metadata/claims.json
+Provenance: metadata/sources.json
+Table1: data/reported-results.csv
+Figure4: data/test-time-scaling.csv
+Citation: references/paper.bib and CITATION.cff
+Validation: python scripts/validate_repository.py
+
+Boundaries: no model reproduction, no source PDF or full extraction, no appendices in v3.
+Table1 and section3.1 disagree; use table-specific values and disclose conflict.
+No explicit backbone mapping per row; no hardware/timing protocol in v3.
+Eq6 aligns answer positions; Eq10 target-layer text and formula disagree.
+Figure4 dataset inferred from baseline; no per-cell latency.

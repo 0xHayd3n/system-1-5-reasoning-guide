@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "title": "System-1.5 Reasoning: Traversal in Language and Latent Spaces with Dynamic Shortcuts",
+  "authors": ["Xiaoqiang Wang", "Suyuchen Wang", "Yun Zhu", "Bang Liu"],
+  "corresponding_author": "Bang Liu",
+  "arxiv_id": "2505.18962",
+  "version": "v3",
+  "version_date": "2025-05-31",
+  "primary_class": "cs.CL",
+  "abstract_url": "https://arxiv.org/abs/2505.18962v3",
+  "pdf_url": "https://arxiv.org/pdf/2505.18962v3",
+  "pdf_pages": 15,
+  "numbered_sections": 5,
+  "tables": 1,
+  "figures": 4,
+  "appendices": [],
+  "affiliations_as_printed": [
+    "DIRO & Institut Courtois, Université de Montréal",
+    "Mila - Quebec AI Institute",
+    "Canada CIFAR AI Chair"
+  ],
+  "affiliation_note": "Xiaoqiang Wang and Suyuchen Wang carry 1,2; Bang Liu carries 1,2,3. No affiliation superscript is printed beside Yun Zhu.",
+  "backbones_named_in_section_3": ["GPT-2 124M", "LLaMA 3.2 1B"],
+  "table_1_backbone_mapping": null,
+  "datasets_reported": ["GSM8K", "GSM-HARD", "StrategyQA"],
+  "code_url_in_pdf": null,
+  "guide": {
+    "repository": "https://github.com/0xHayd3n/system-1-5-reasoning-guide",
+    "maintainer": "0xHayd3n",
+    "assistance": "OpenAI Codex",
+    "created_date": "2026-10-20",
+    "unofficial": true,
+    "empirical_reproduction": false,
+    "source_pdf_distributed": false
+  }
+}

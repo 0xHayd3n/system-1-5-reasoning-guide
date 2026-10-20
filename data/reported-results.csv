@@ -1,0 +1,25 @@
+dataset,method,accuracy_pct,pre_answer_decoding_steps,flops_reduction_factor_per_step,wall_clock_speedup_factor,source_table,source_pdf_page
+GSM8K,CoT,46.94,26,,,1,7
+GSM8K,LITE,44.51,28,1.84,1.61,1,7
+GSM8K,LayerSkip,43.20,32,1.77,1.45,1,7
+GSM8K,iCoT,32.14,2,1.02,13.45,1,7
+GSM8K,Coconut,36.75,2,1.02,11.98,1,7
+GSM8K,CODI,43.78,2,1.02,13.37,1,7
+GSM8K,pause token,46.32,38,1.00,0.80,1,7
+GSM8K,System-1.5,46.66,2,1.95,20.27,1,7
+GSM-HARD,CoT,38.32,26,,,1,7
+GSM-HARD,LITE,37.01,28,1.56,1.44,1,7
+GSM-HARD,LayerSkip,36.55,33,1.32,1.03,1,7
+GSM-HARD,iCoT,23.17,4,1.02,6.17,1,7
+GSM-HARD,Coconut,28.25,4,1.02,7.07,1,7
+GSM-HARD,CODI,35.91,4,1.02,6.93,1,7
+GSM-HARD,pause token,38.17,42,1.00,0.89,1,7
+GSM-HARD,System-1.5,38.28,4,1.76,12.45,1,7
+StrategyQA,CoT,47.62,52,,,1,7
+StrategyQA,LITE,46.15,42,1.96,2.36,1,7
+StrategyQA,LayerSkip,42.54,49,1.80,1.86,1,7
+StrategyQA,iCoT,34.42,2,1.02,26.47,1,7
+StrategyQA,Coconut,38.67,2,1.02,27.25,1,7
+StrategyQA,CODI,45.12,2,1.02,25.96,1,7
+StrategyQA,pause token,48.14,61,1.00,0.82,1,7
+StrategyQA,System-1.5,48.61,2,2.12,55.65,1,7

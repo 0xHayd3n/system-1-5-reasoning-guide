@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "source_id": "paper-v3",
+  "version": "v3",
+  "classification_definitions": {
+    "paper_report": "Method, setup, or numerical observation reported by the paper; not independently reproduced",
+    "authors_explanation": "Causal or conceptual interpretation offered by the authors",
+    "guide_calculation": "Arithmetic performed here using displayed source values",
+    "guide_interpretation": "Companion inference or caution, not a new paper finding",
+    "guide_proposal": "Future work suggested by this companion"
+  },
+  "claims": [
+    {
+      "id": "C01", "classification": "paper_report",
+      "claim": "The method combines router-adapter depth exits and same-layer hidden-state reuse across latent steps.",
+      "source_location": "Section 2.1, Equations 1-5, pages 4-5", "pdf_pages": [4, 5],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=4",
+      "caveats": ["Soft training mixtures differ from hard inference routing.", "Equation 5 is not a normalized three-way probability distribution."]
+    },
+    {
+      "id": "C02", "classification": "paper_report",
+      "claim": "Training first aligns language and latent reasoning, then freezes inherited Transformer parameters while training router-adapter modules.",
+      "source_location": "Section 2.2, Equations 6-13, pages 5-7", "pdf_pages": [5, 6, 7],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=5",
+      "caveats": ["Equation 6's MSE is over answer positions.", "Teacher-forced training is not identical to free-running inference."]
+    },
+    {
+      "id": "C03", "classification": "paper_report",
+      "claim": "Independent DAG subquestions are labeled non-critical; derived integration nodes are labeled critical.",
+      "source_location": "Section 2.2, pages 5-6", "pdf_pages": [5, 6],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=5",
+      "caveats": ["Dependency category is a training proxy, not proof of difficulty or dispensability."]
+    },
+    {
+      "id": "C04", "classification": "paper_report",
+      "claim": "Table 1 reports GSM8K System-1.5 accuracy 46.66%, 2 pre-answer steps, 1.95x per-step FLOPs factor and 20.27x wall-clock speedup versus CoT.",
+      "source_location": "Table 1, page 7", "pdf_pages": [7],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=7",
+      "data_path": "data/reported-results.csv", "dataset": "GSM8K", "baseline": "CoT",
+      "values": {"accuracy_pct": 46.66, "baseline_accuracy_pct": 46.94, "steps": 2, "baseline_steps": 26, "speedup_factor": 20.27},
+      "caveats": ["Backbone mapping and timing protocol are unspecified.", "Section 3.1 page 8 gives conflicting accuracy assignments including 46.67 for CoT."]
+    },
+    {
+      "id": "C05", "classification": "paper_report",
+      "claim": "Table 1 reports GSM-HARD System-1.5 accuracy 38.28% versus CoT 38.32%, with 4 versus 26 steps and 12.45x speedup.",
+      "source_location": "Table 1, page 7", "pdf_pages": [7],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=7",
+      "data_path": "data/reported-results.csv", "dataset": "GSM-HARD", "baseline": "CoT",
+      "values": {"accuracy_pct": 38.28, "baseline_accuracy_pct": 38.32, "steps": 4, "baseline_steps": 26, "speedup_factor": 12.45},
+      "caveats": ["Below 20x on this dataset.", "Section 3.1 swaps the table's accuracy assignments."]
+    },
+    {
+      "id": "C06", "classification": "paper_report",
+      "claim": "Table 1 reports StrategyQA System-1.5 accuracy 48.61% versus CoT 47.62%, with 2 versus 52 steps and 55.65x speedup.",
+      "source_location": "Table 1, page 7", "pdf_pages": [7],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=7",
+      "data_path": "data/reported-results.csv", "dataset": "StrategyQA", "baseline": "CoT",
+      "values": {"accuracy_pct": 48.61, "baseline_accuracy_pct": 47.62, "steps": 2, "baseline_steps": 52, "speedup_factor": 55.65},
+      "caveats": ["Section 3.1 instead states CoT 47.36%.", "No uncertainty estimates support a significance claim."]
+    },
+    {
+      "id": "C07", "classification": "guide_calculation",
+      "claim": "The Table 1 GSM8K intermediate-step reduction is 92.31% from 1 - 2/26.",
+      "source_location": "Table 1 page 7; abstract page 1; introduction page 3", "pdf_pages": [1, 3, 7],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=7",
+      "formula": "100 * (1 - 2 / 26)", "rounded_value_pct": 92.31,
+      "caveats": ["Not total output-token or total FLOPs reduction.", "Abstract and section 3.1 say 92.31%; introduction says 91.0% on average without reconciliation."]
+    },
+    {
+      "id": "C08", "classification": "authors_explanation",
+      "claim": "Optimization conflicts may explain why joint alignment/shortcut learning and full-parameter shortcut learning perform worse.",
+      "source_location": "Figure 3 and Section 3.2, pages 8-9", "pdf_pages": [8, 9],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=8",
+      "caveats": ["Performance ablation is observed; the proposed causal mechanism is not separately established.", "Exact Figure 3 bar values are not printed and are not transcribed."]
+    },
+    {
+      "id": "C09", "classification": "paper_report",
+      "claim": "Figure 4 prints an accuracy grid over depth thresholds and latent-step budgets; maximum displayed accuracy is 49.26% at depth 0.8 and 64 steps.",
+      "source_location": "Figure 4, page 8; Section 3.2 page 9", "pdf_pages": [8, 9],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=8",
+      "data_path": "data/test-time-scaling.csv",
+      "values": {"accuracy_pct": 49.26, "lambda_depth": 0.8, "lambda_step": 64},
+      "caveats": ["Caption does not explicitly name dataset; GSM8K is inferred from baseline.", "No per-cell latency/FLOPs are given.", "At depth 1.0 and 64 steps accuracy is 49.25%, so strict monotonicity does not hold everywhere."]
+    },
+    {
+      "id": "C10", "classification": "guide_interpretation",
+      "claim": "Equation 10 has an unresolved target-layer specification conflict.",
+      "source_location": "Equation 10 and preceding prose, page 6", "pdf_pages": [6],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=6",
+      "caveats": ["Prose says final-layer student target; printed equation uses l,t.", "Guide does not choose a correction."]
+    },
+    {
+      "id": "C11", "classification": "guide_interpretation",
+      "claim": "The System-1/System-2 analogy is a design framing, not demonstrated equivalence to human cognition.",
+      "source_location": "Sections 1-2, pages 1-5", "pdf_pages": [1, 2, 3, 4, 5],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=2",
+      "caveats": ["The experiments are model reasoning benchmarks, not cognitive measurements."]
+    },
+    {
+      "id": "C12", "classification": "guide_proposal",
+      "claim": "A matched DS-only/SS-only/combined ablation and per-grid-cell cost measurements would clarify marginal contributions and practical tradeoffs.",
+      "source_location": "Motivated by Section 3.2 pages 8-9; proposal in guide module 06", "pdf_pages": [8, 9],
+      "url": "https://arxiv.org/pdf/2505.18962v3#page=8",
+      "caveats": ["Proposed by this companion; not an experiment already reported in v3."]
+    }
+  ]
+}

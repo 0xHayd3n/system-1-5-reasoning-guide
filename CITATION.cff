@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "This is an unofficial reading companion. Please cite the original research for its method and results."
+type: software
+title: "System-1.5 Reasoning — an unofficial reading guide"
+version: 1.0.0
+date-released: 2026-10-20
+license: MIT
+authors:
+  - name: "0xHayd3n"
+repository-code: "https://github.com/0xHayd3n/system-1-5-reasoning-guide"
+url: "https://github.com/0xHayd3n/system-1-5-reasoning-guide"
+preferred-citation:
+  type: article
+  title: "System-1.5 Reasoning: Traversal in Language and Latent Spaces with Dynamic Shortcuts"
+  authors:
+    - family-names: Wang
+      given-names: Xiaoqiang
+    - family-names: Wang
+      given-names: Suyuchen
+    - family-names: Zhu
+      given-names: Yun
+    - family-names: Liu
+      given-names: Bang
+  year: 2025
+  date-published: 2025-05-31
+  url: "https://arxiv.org/abs/2505.18962v3"
+  notes: "arXiv:2505.18962v3 [cs.CL]; v3 dated 31 May 2025."
